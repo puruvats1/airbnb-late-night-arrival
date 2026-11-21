@@ -16,7 +16,7 @@
   --fs-p:clamp(16px,1.1vw,17.5px);
   --out:cubic-bezier(.25,.46,.45,.94);--io:cubic-bezier(.65,0,.35,1);
   --stage:min(100svh,900px);
-  --gut:64px;--gut-l:140px;
+  --gut:64px;--gut-l:64px;
   color-scheme:light;
 }
 
