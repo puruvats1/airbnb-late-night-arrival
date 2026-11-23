@@ -9,7 +9,22 @@
   const railTrack = document.querySelector('.rail-track');
   const railLinks = $$('.rail a');
   const scenes = $$('[data-scene]');
-  const stepGroups = $$('[data-steps]').map((el) => ({ el, steps: $$('[data-step]', el), idx: -2 }));
+  const stepGroups = $$('[data-steps]').map((el) => ({ el, steps: $$('[data-step]', el), idx: -2, frame: el.querySelector('.deck.proto iframe'), ready: false, want: null, shown: null }));
+  // Scroll stories drive a live prototype: each step names the screen it should show.
+  function sendShow(g) {
+    if (!g.frame || !g.ready || !g.want || g.want === g.shown) return;
+    g.shown = g.want;
+    g.frame.contentWindow.postMessage({ proto: 'show', step: g.want }, '*');
+  }
+  // The prototype can finish loading before this script runs (a reload mid-page), so it counts as ready
+  // when it has loaded, when it already had, or as soon as it sends any message.
+  const markReady = (g) => { g.ready = true; g.shown = null; sendShow(g); };
+  stepGroups.forEach((g) => {
+    if (!g.frame) return;
+    g.frame.addEventListener('load', () => markReady(g));
+    try { if (g.frame.contentWindow.__proto) markReady(g); } catch {}
+  });
+  window.addEventListener('message', (e) => { const g = stepGroups.find((x) => x.frame && e.source === x.frame.contentWindow); if (g && !g.ready) markReady(g); });
   const fills = $$('[data-fill]');
   const chapters = $$('[data-ch]');
 
@@ -46,15 +61,24 @@
       el.style.setProperty('--sp', (span > 0 ? clamp01(-b.top / span) : 1).toFixed(4));
     }
 
-    // Step groups: data-s0..n mark every step whose top has passed 60% of the viewport.
-    // On narrow screens the pinned phone covers the top of the viewport, so the line sits lower.
-    const line = vh * (root.clientWidth <= 900 ? 0.85 : 0.6);
+    // Step groups: a step becomes current once its tag (the start of its text) reaches the middle of the
+    // viewport, so the screen changes as the reader arrives at the words, not before. A spacer step counts
+    // from its own middle. On narrow screens the pinned phone covers the top, so the line sits lower.
+    const line = vh * (root.clientWidth <= 900 ? 0.8 : 0.5);
     for (const g of stepGroups) {
       let idx = -1;
-      g.steps.forEach((st, i) => { if (st.getBoundingClientRect().top < line) idx = i; });
+      g.steps.forEach((st, i) => {
+        const r = (st.firstElementChild || st).getBoundingClientRect();
+        if ((st.classList.contains('ghost') ? r.top + r.height / 2 : r.top) < line) idx = i;
+      });
       if (idx === g.idx) continue;
       g.idx = idx;
       g.steps.forEach((_, i) => g.el.toggleAttribute('data-s' + i, i <= idx));
+      // Light the index mark for the current step and move the pinned prototype to its screen.
+      const cur = Math.max(idx, 0);
+      $$('.deck-idx i', g.el).forEach((p, i) => p.classList.toggle('on', i === cur));
+      g.want = g.steps[cur] && g.steps[cur].dataset.show;
+      sendShow(g);
     }
 
     for (const n of fills) {

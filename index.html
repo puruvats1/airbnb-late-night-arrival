@@ -8,7 +8,7 @@
 <meta property="og:title" content="It’s 1:45 AM and the door won’t open">
 <meta property="og:description" content="Navi UX design assignment · Airbnb late-night arrival">
 <meta property="og:type" content="article">
-<meta property="og:image" content="img/v4-04.png">
+<meta property="og:image" content="img/v5-04.png">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +27,7 @@
       <p class="eyebrow">Navi UX design assignment<span> · Airbnb late-night arrival</span></p>
       <div class="me">
         <p><b>Puru Vats</b> · 23B3623</p>
+        <a class="site alt" href="demo/index.html" target="_blank" rel="noopener">Final prototype<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
         <a class="site" href="https://puruvats.com" target="_blank" rel="noopener">Visit my website<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
       </div>
     </div>
@@ -50,7 +51,7 @@
     <section class="wrap">
       <div class="intro">
         <p class="lead" data-r="0">Meera is 22 and reached her Airbnb at 1:45 AM with three friends after an overnight bus. The door code didn’t work, the host was asleep and her phone was at 8%. Afterwards she summed up the night in one line.</p>
-        <blockquote class="quote" data-r="1"><p>“Check-in shouldn’t fall apart when you arrive late with bad network.”</p></blockquote>
+        <blockquote class="quote" data-r="1"><img class="meera" src="img/ill/meera.png" alt="" width="240" height="240"><p>“Check-in shouldn’t fall apart when you arrive late with bad network.”</p></blockquote>
         <p class="p what" data-r="2">This case study looks at what Airbnb gives a guest in that exact moment. I tried to get help in the app the way Meera would have, worked out where it let her down and then designed what should happen instead.</p>
       </div>
       <ol class="strip" data-r="0" aria-label="How the night unfolds">
@@ -65,24 +66,34 @@
 
     <!-- 01 -->
     <section class="wrap sec" id="ch1" data-ch="1">
-      <p class="kw" data-r="0"><span>From the brief</span>Go deep on one focused problem</p>
-      <h2 class="h2" data-r="0"><span>What does Airbnb do when you’re locked out in the middle of the night?</span></h2>
-      <p class="lead" data-r="1">My first question was what Airbnb actually does for a guest who is locked out at night. It sounded easy to answer because Airbnb has a Help Centre and a support chat and even a policy for this situation.</p>
-      <p class="p" data-r="2">So I opened the app on one of my own past bookings and tried to get help the way Meera would have, standing at that gate with a dying phone. I followed every route I could find and noted where each one ended.</p>
-    </section>
-
-    <!-- 02 -->
-    <section class="wrap sec" id="ch2" data-ch="2">
-      <p class="kw" data-r="0"><span>From the brief</span>Light research</p>
-      <h2 class="h2" data-r="0"><span>So where does the app actually send you?</span></h2>
-      <p class="lead" data-r="1">I found four ways to look for help, and none of them starts from a part of the app made for check-in.</p>
-      <p class="p" data-r="1">Check-in details arrive by email or in the chat with the host, so in Meera’s case they were buried in her inbox. When something goes wrong at the door there is no single place to start from.</p>
+      <h2 class="h2" data-r="0"><span>Where does the app send you when you’re locked out?</span></h2>
+      <p class="lead" data-r="1">I opened the app on one of my own bookings and tried to get help the way Meera would have, standing at that gate with a dying phone. I found four ways to look for help and none of them starts from a part of the app made for check-in.</p>
       <div class="stats" data-r="2">
         <div><b>~26 min</b><span>spent trying all four</span></div>
-        <div><b>6+</b><span>support threads for one trip</span></div>
+        <div><b>150+</b><span>loosely matched articles upon search</span></div>
       </div>
-
-      <div class="routes">
+      <ol class="routes-sum" data-r="2">
+        <li><p class="lab">Route 1</p><h4>Search the Help Centre</h4><p>152 loosely matched articles, and the closest ones end with “contact customer service”.</p></li>
+        <li><p class="lab">Route 2</p><h4>Open the trip</h4><p>The check-in tile isn’t tappable, the details sit in the host chat and the stay page ends at support.</p></li>
+        <li><p class="lab">Route 3</p><h4>Contact support</h4><p>On weak signal the message failed, and the reply pointed to a button that isn’t there.</p></li>
+        <li><p class="lab">Route 4</p><h4>Try again</h4><p>Every attempt opens a new thread that forgets the last one. Six threads for one trip.</p></li>
+      </ol>
+      <div class="learnrow">
+      <div class="cascade" data-r="0" aria-label="One screen from each of the four routes">
+        <figure><img src="img/cur-a7.png" alt="Help Centre search with 152 results" loading="lazy" width="360" height="800"></figure>
+        <figure><img src="img/cur-b2.png" alt="Trip page with a check-in tile showing only a time" loading="lazy" width="360" height="800"></figure>
+        <figure><img src="img/cur-c11.png" alt="AI reply pointing back to Trips for a button that isn’t there" loading="lazy" width="360" height="800"></figure>
+        <figure><img src="img/cur-d5.png" alt="Messages tab with many Airbnb Support threads" loading="lazy" width="360" height="800"></figure>
+      </div>
+      <div class="learn" data-r="0">
+        <p class="lab">Moving forward</p>
+        <p class="p">Through this walkthrough it was clear that help was there, but it was scattered everywhere with multiple entry points. In a situation like ours, with low battery and bad network, it would be extremely difficult to figure out what to do in the panic. This made it clear that we need a flow that ensures entry and provides adequate support at the right time, without the user going back and forth.</p>
+      </div>
+      </div>
+      
+      <details class="more" data-r="0">
+        <summary>See all four flows, screen by screen</summary>
+<div class="routes">
         <article class="route" data-r="0">
           <div>
             <p class="lab">Route 1</p>
@@ -136,96 +147,51 @@
           </div>
         </article>
       </div>
-
-      <div class="sub">
-        <h3 class="h3" data-r="0">It wasn’t one failure. It was a chain.</h3>
-        <p class="p" data-r="1">Support did exist, but it wasn’t tied to the trip she was standing outside. It was scattered across four places and some of them were dead ends, so when one link broke the next had nothing to lean on.</p>
-        <ol class="chain" data-r="2">
-          <li style="--i:0"><span class="ill m"><img src="img/ill/envelope.png" alt=""><img class="bd" src="img/ill/cross.png" alt=""></span><b>Information</b><span>No offline copy of the address or the code</span></li>
-          <li style="--i:1"><span class="ill m"><img src="img/ill/signal.png" alt=""><img class="bd" src="img/ill/cross.png" alt=""></span><b>Context</b><span>Nothing in the app changed for 8% and one bar</span></li>
-          <li style="--i:2"><span class="ill m"><img src="img/ill/locked.png" alt=""><img class="bd" src="img/ill/cross.png" alt=""></span><b>Access</b><span>No second way in once the keypad failed</span></li>
-          <li style="--i:3"><span class="ill m"><img src="img/ill/call.png" alt=""><img class="bd" src="img/ill/cross.png" alt=""></span><b>Host</b><span>No one else to call when the host didn’t answer</span></li>
-          <li style="--i:4"><span class="ill m"><img src="img/ill/company.png" alt=""><img class="bd" src="img/ill/cross.png" alt=""></span><b>Airbnb</b><span>No one who owned the case in that moment</span></li>
-        </ol>
-      </div>
+      </details>
     </section>
 
     <section class="wrap rt">
-      <p class="kw" data-r="0"><span>From the brief</span>Key states where user trust or clarity could break</p>
       <p class="small" data-r="0">Airbnb’s own help page says to contact them if the host hasn’t replied within “a reasonable time”.</p>
-      <p class="huge" data-r="1">How long is that at 1:45&nbsp;AM?</p>
-      <p class="lead" data-r="2">That question became the premise of the design. Within ten minutes of asking for help, Meera should know that someone is working on it and be left with a way forward that still works after her battery dies.</p>
-      <div class="pillars">
-        <div class="card" data-r="0"><span class="ill"><img src="img/ill/call.png" alt=""><img class="bd" src="img/ill/check.png" alt=""></span><div><h4>Reassurance</h4><p>She can see the team trying on her behalf, and in the happy case the host picks up and gets back to her.</p></div></div>
-        <div class="card" data-r="1"><span class="ill"><img src="img/ill/support.png" alt=""><img class="bd" src="img/ill/hotel.png" alt=""></span><div><h4>Support</h4><p>If the host can’t fix it, Airbnb support steps in and gets her group to a backup stay.</p></div></div>
-        <div class="card" data-r="2"><span class="ill"><img src="img/ill/shield.png" alt=""><img class="bd" src="img/ill/link.png" alt=""></span><div><h4>Safety</h4><p>Whatever happens she is offered a safe option and a way to follow up, even once her phone is dead.</p></div></div>
+      <p class="small" data-r="1">The question becomes</p>
+      <div class="rt-row">
+      <p class="huge" data-r="1">“What is this reasonable time at 1:45&nbsp;AM?”</p>
+      <p class="p rt-p" data-r="2">I couldn’t change the wait itself, but I could change the waiting. A wait feels endless when nothing tells you what is happening, so that question became the premise of the design.</p>
       </div>
-      <p class="p" data-r="0" style="margin-top:40px">I couldn’t change the wait itself. What I could change was the waiting, because a wait feels endless when there is no feedback on what is happening. So I designed a system of fallbacks that shows her every step and finishes well before her battery does.</p>
-      <div class="race" data-r="0" aria-label="Her battery is running out while the fallbacks complete within ten minutes">
-        <div class="row"><b>Her battery</b><div class="bar batt"><i></i></div><span>8% and falling</span></div>
-        <div class="row"><b>The fallbacks</b><div class="bar proc"><i></i></div><span>within ten minutes</span></div>
+      <div class="aim" data-r="0">
+        <p class="lab">How might we</p>
+        <p class="hmw">Turn a silent, failed late-night check-in into a guided, time-boxed path where Meera always knows the next step, and within ten minutes of asking for help is inside, or knows her group is safe and has a stay for the night?</p>
       </div>
     </section>
 
-    <!-- 03 -->
-    <section class="wrap sec" id="ch3" data-ch="3">
-      <p class="kw" data-r="0"><span>From the brief</span>One focused problem and flow</p>
-      <h2 class="h2" data-r="0"><span>So what would “fixed” even look like?</span></h2>
-      <p class="lead" data-r="1">I started with the version of this night that goes right.</p>
-      <p class="p" data-r="2">Meera calls and the host picks up within a minute. They tell her to hold the keypad button for five seconds and say the spare key is in the lockbox if that doesn’t work. Four minutes later the group is inside and the host texts “Sorry! Sleep well.” Nothing about that night is clever. It works because of four simple things.</p>
-      <div class="bench" data-r="0">
-        <div class="card ecard"><span class="ill m"><img src="img/ill/call.png" alt=""><img class="bd" src="img/ill/stopwatch.png" alt=""></span><h4>Someone answered fast</h4><p>She knew within a minute that she wasn’t alone.</p></div>
-        <div class="card ecard"><span class="ill m"><img src="img/ill/house.png" alt=""><img class="bd" src="img/ill/wrench.png" alt=""></span><h4>The host knew the place</h4><p>The fix came from knowing their own keypad.</p></div>
-        <div class="card ecard"><span class="ill m"><img src="img/ill/oldkey.png" alt=""><img class="bd" src="img/ill/check.png" alt=""></span><h4>There was a backup</h4><p>The spare key meant one failure wasn’t the end.</p></div>
-        <div class="card ecard"><span class="ill m"><img src="img/ill/bed.png" alt=""><img class="bd" src="img/ill/heart.png" alt=""></span><h4>It ended warmly</h4><p>“Sleep well” is what she’ll remember.</p></div>
-      </div>
-      <p class="p" data-r="0" style="margin-top:40px">When the host is silent the app has to give her those same four things on its own.</p>
-      <div class="aim" data-r="1">
-        <p class="lab">The aim</p>
-        <p>Within ten minutes of asking for help, Meera knows someone is on it and has a way forward, whether that is inside, a backup stay or somewhere safe.<small>She keeps a way to follow up even if her phone dies. Ten minutes is how long the fallbacks take to run, not a promise about the lock.</small></p>
-      </div>
-
-      <div class="sub">
-        <p class="kw" data-r="0"><span>From the brief</span>Stakeholder constraints</p>
-        <h3 class="h3" data-r="0">Who else is part of this night?</h3>
-        <p class="p" data-r="1">Meera isn’t the only stakeholder. Whatever helps her at the gate also wakes someone up or costs someone money. A fix that only works for the guest turns into a free refund button, or a host who stops accepting late arrivals.</p>
-        <div class="people">
-          <div class="card" data-r="0"><img class="emo" src="img/ill/meera.png" alt=""><h4>Meera and friends</h4><p class="role">The guests</p><p>Cold and tired with one booking shared between four phones.</p><p class="needs">Needs to know the next step and to get inside or get a bed.</p></div>
-          <div class="card" data-r="1"><img class="emo" src="img/ill/host.png" alt=""><h4>The host</h4><p class="role">Asleep at night</p><p>If every lockout wakes them five times they will stop taking late arrivals.</p><p class="needs">Needs one clear alert and a fair chance to fix it.</p></div>
-          <div class="card" data-r="2"><img class="emo" src="img/ill/support.png" alt=""><h4>Night support</h4><p class="role">Airbnb’s team</p><p>A small team with a queue at night. Every minute spent asking what happened is a minute Meera doesn’t have.</p><p class="needs">Needs the whole story the moment they pick it up.</p></div>
-          <div class="card" data-r="3"><img class="emo" src="img/ill/company.png" alt=""><h4>Airbnb</h4><p class="role">The business</p><p>A refund is cheaper than losing a guest for good. A button that hands out refunds to anyone is worse than both.</p><p class="needs">Needs trust kept and hosts kept without inviting abuse.</p></div>
-        </div>
-      </div>
-
-      <div class="sub">
-        <p class="kw" data-r="0"><span>From the brief</span>Balance user needs with company goals</p>
-        <h3 class="h3" data-r="0">So where should the answer sit?</h3>
-        <p class="p" data-r="1">Most products that cover the failure states do it with something only the guest benefits from, like a person on call all night or a free room for anyone who asks. I aimed for the top right, covering the failures in a way that stays fair to the host and to Airbnb.</p>
-        <div class="mapwrap">
+    <!-- 02 -->
+    <section class="wrap sec" id="ch2" data-ch="2">
+      <h2 class="h2" data-r="0"><span>What do others do better?</span></h2>
+      <div class="others">
+        <div>
+        <p class="p more-p" data-r="1">Most products that cover the failure states do it with something only the guest benefits from, like a person on call all night or a free room for anyone who asks. Three ideas kept coming up across all of them: a clock, a record of what was tried, and one door to a human. I aimed for the top right, covering failures in a way that stays fair to the host and the business.</p>
+<div class="mapwrap">
           <figure class="map" data-r="0">
-            <svg viewBox="0 0 560 420" role="img" aria-labelledby="mapt">
+            <svg viewBox="0 0 560 560" role="img" aria-labelledby="mapt">
               <title id="mapt">Positioning map. Horizontal axis from good for the guest only to fair to guest, host and business. Vertical axis from happy path only to covers failure states. Night concierge, hotels and smart locks cover failures but mostly for the guest. Uber, Turo and Vrbo sit in the middle. Airbnb today and Booking.com cover only the happy path. This design sits top right.</title>
               <defs>
                 <clipPath id="rr" clipPathUnits="objectBoundingBox"><rect width="1" height="1" rx=".24" ry=".24"/></clipPath>
               </defs>
-              <line class="grid" x1="300" y1="20" x2="300" y2="360"/><line class="grid" x1="60" y1="190" x2="540" y2="190"/>
-              <rect class="zone" x="300" y="30" width="230" height="84" rx="16"/>
-              <text class="zl" x="314" y="52">Where I aimed</text>
-              <line class="ax" x1="60" y1="20" x2="60" y2="360"/><line class="ax" x1="60" y1="360" x2="540" y2="360"/>
-              <text class="axl" x="68" y="386">Good for the guest only</text>
-              <text class="axl" x="540" y="386" text-anchor="end">Fair to guest, host and business</text>
+              <line class="grid" x1="300" y1="20" x2="300" y2="500"/><line class="grid" x1="60" y1="260" x2="540" y2="260"/>
+              <line class="ax" x1="60" y1="20" x2="60" y2="500"/><line class="ax" x1="60" y1="500" x2="540" y2="500"/>
+              <text class="axl" x="68" y="526">Good for the guest only</text>
+              <text class="axl" x="540" y="526" text-anchor="end">Fair to guest, host and business</text>
               <text class="axl" x="50" y="24" text-anchor="end" transform="rotate(-90 50 24)">Covers failure states</text>
-              <text class="axl" x="50" y="360" text-anchor="start" transform="rotate(-90 50 360)">Happy path only</text>
+              <text class="axl" x="50" y="500" text-anchor="start" transform="rotate(-90 50 500)">Happy path only</text>
 
-              <g class="app"><rect class="tile" x="84" y="40" width="28" height="28" rx="7"/><image href="img/ill/bellhop.png" x="88" y="44" width="20" height="20"/></g><text x="120" y="59">Night concierge</text>
-              <g class="app"><rect class="tile" x="120" y="100" width="28" height="28" rx="7"/><image href="img/ill/hotel.png" x="124" y="104" width="20" height="20"/></g><text x="156" y="119">Hotels</text>
-              <g class="app"><rect class="tile" x="176" y="150" width="28" height="28" rx="7"/><image href="img/ill/locked.png" x="180" y="154" width="20" height="20"/></g><text x="212" y="169">Smart lock unlock</text>
-              <g class="app"><image href="img/apps/uber.jpg" x="336" y="126" width="28" height="28" clip-path="url(#rr)"/></g><text x="372" y="145">Uber safety</text>
-              <g class="app"><image href="img/apps/turo.jpg" x="372" y="200" width="28" height="28" clip-path="url(#rr)"/></g><text x="408" y="219">Turo</text>
-              <g class="app"><image href="img/apps/vrbo.jpg" x="300" y="236" width="28" height="28" clip-path="url(#rr)"/></g><text x="336" y="255">Vrbo</text>
-              <g class="app today"><image href="img/apps/airbnb.jpg" x="360" y="290" width="28" height="28" clip-path="url(#rr)"/></g><text x="396" y="309">Airbnb today</text>
-              <g class="app"><image href="img/apps/booking.jpg" x="224" y="316" width="28" height="28" clip-path="url(#rr)"/></g><text x="260" y="335">Booking.com</text>
-              <g class="us"><rect class="ring" x="468" y="46" width="44" height="44" rx="12"/><image href="img/apps/airbnb.jpg" x="472" y="50" width="36" height="36" clip-path="url(#rr)"/><text class="us-l" x="458" y="96" text-anchor="end">This design</text></g>
+              <g class="app"><rect class="tile" x="84" y="54" width="28" height="28" rx="7"/><image href="img/ill/bellhop.png" x="88" y="58" width="20" height="20"/></g><text x="120" y="73">Night concierge</text>
+              <g class="app"><rect class="tile" x="120" y="139" width="28" height="28" rx="7"/><image href="img/ill/hotel.png" x="124" y="143" width="20" height="20"/></g><text x="156" y="158">Hotels</text>
+              <g class="app"><rect class="tile" x="176" y="209" width="28" height="28" rx="7"/><image href="img/ill/locked.png" x="180" y="213" width="20" height="20"/></g><text x="212" y="228">Smart lock unlock</text>
+              <g class="app"><image href="img/apps/uber.jpg" x="336" y="175" width="28" height="28" clip-path="url(#rr)"/></g><text x="372" y="194">Uber safety</text>
+              <g class="app"><image href="img/apps/turo.jpg" x="372" y="280" width="28" height="28" clip-path="url(#rr)"/></g><text x="408" y="299">Turo</text>
+              <g class="app"><image href="img/apps/vrbo.jpg" x="300" y="331" width="28" height="28" clip-path="url(#rr)"/></g><text x="336" y="350">Vrbo</text>
+              <g class="app today"><image href="img/apps/airbnb.jpg" x="360" y="407" width="28" height="28" clip-path="url(#rr)"/></g><text x="396" y="426">Airbnb today</text>
+              <g class="app"><image href="img/apps/booking.jpg" x="224" y="444" width="28" height="28" clip-path="url(#rr)"/></g><text x="260" y="463">Booking.com</text>
+              <g class="us"><path class="pin" transform="translate(478 22)" d="M12 22s8-6.5 8-13a8 8 0 1 0-16 0c0 6.5 8 13 8 13z"/><circle class="pin-dot" cx="490" cy="31" r="3"/><image href="img/apps/airbnb.jpg" x="472" y="50" width="36" height="36" clip-path="url(#rr)"/><text class="us-l" x="490" y="106" text-anchor="middle">Our design</text></g>
             </svg>
           </figure>
           <div data-r="1">
@@ -236,324 +202,419 @@
               <li><span class="tile"><img src="img/ill/hotel.png" alt=""></span><b>Hotels</b><span>When a room can’t be honoured they book you elsewhere and pay the first night.</span></li>
               <li><img src="img/apps/uber.jpg" alt=""><b>Uber</b><span>One visible safety button that reaches a live agent.</span></li>
               <li><img src="img/apps/booking.jpg" alt=""><b>Booking.com</b><span>Tries to find an alternative, but the guest still does the chasing.</span></li>
-              <li><span class="tile"><img src="img/ill/locked.png" alt=""></span><b>Smart locks</b><span>Certain, but only for hosts who own one. A night concierge is certain too but needs staff at every listing.</span></li>
+              <li><span class="tile"><img src="img/ill/locked.png" alt=""></span><b>Smart locks</b><span>Certain, but only for the few hosts who own one.</span></li>
             </ul>
-            <p class="p comp-sum">Three ideas kept coming up across all of them. There is a clock, there is a record of what was tried, and there is one door to a human.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- questions -->
+    <section class="wrap sec" id="questions">
+      <h2 class="h2" data-r="0"><span>Five questions the night asks</span></h2>
+      <p class="lead" data-r="1">Before drawing any screen, I turned the night into five questions. Every idea had to answer one of them.</p>
+      <div class="qwrap">
+<ol class="qs">
+        <li><p>Can we reassure Meera right away that someone is already working on it?</p></li>
+        <li><p>Can that still work at 8% with one bar of signal, and what are the backups if it doesn’t?</p></li>
+        <li><p>If the host can’t be reached, can we stop her wasting effort and go straight to what still helps?</p></li>
+        <li><p>Can she have a real option for the night by minute ten?</p></li>
+        <li><p>And what about the three people standing next to her?</p></li>
+      </ol>
+
+        </div>
+    </section>
+
+    <!-- 03 -->
+    <section class="wrap sec" id="ch3" data-ch="3">
+      <h2 class="h2" data-r="0"><span>It was then taking some shape</span></h2>
+      <p class="lead" data-r="1">After the ideation against those five questions, there was a fallback system I could imagine happening, which I mapped below. I tried to take care of aspects like safety, backups, how much the company can do from its end and what the user needs in the moment.</p>
+<figure class="flowfj" data-r="0">
+        <svg viewBox="0 0 1120 720" role="img" aria-labelledby="flowt">
+          <title id="flowt">Flow of fallbacks. Meera taps Trouble getting in. Fallback 1, a case opens and waits for signal. Fallback 2, quick fixes for the check-in type the host set up. If she is inside, the flow ends. If not, fallback 3 reaches the co-host, then the host. If they reply she gets in. If not, fallback 4, support is reached and suggests safe spots and backup Airbnbs, ending inside or with a bed for four. Alongside every step, the group is kept informed through a web link, and I don’t feel safe reaches emergency services, the safety line and safe places nearby.</title>
+          <defs>
+            <pattern id="fjdots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#d6d6d6"/></pattern>
+            <marker id="fjarr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#333"/></marker>
+          </defs>
+          <rect width="1120" height="720" rx="24" fill="#f7f7f7"/>
+          <rect width="1120" height="720" rx="24" fill="url(#fjdots)"/>
+          <g class="fj-lines" fill="none" stroke="#333" stroke-width="2" marker-end="url(#fjarr)">
+            <path d="M190 130H238"/><path d="M460 130H508"/><path d="M730 130H788"/><path d="M930 130H983"/>
+            <path d="M860 200V266H130V330"/>
+            <path d="M240 380H298"/><path d="M370 450V488"/><path d="M440 380H498"/><path d="M740 380H798"/>
+          </g>
+          <g class="fj-yn"><text x="956" y="120" text-anchor="middle">Yes</text><text x="878" y="240">No</text><text x="384" y="474">Yes</text><text x="469" y="364" text-anchor="middle">No</text></g>
+          <g class="fj-pill"><rect x="20" y="102" width="170" height="56" rx="28" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="105" y="125" text-anchor="middle">Taps “Trouble</text><text x="105" y="145" text-anchor="middle">getting in?”</text></g>
+          <g class="fj-box"><rect x="240" y="82" width="220" height="96" rx="14" fill="#c2e5ff"/><text class="l" x="262" y="112">Fallback 1</text><text class="t" x="262" y="138">We’ve got it</text><text class="s" x="262" y="160">A case opens, waits for signal</text></g>
+          <g class="fj-box"><rect x="510" y="82" width="220" height="96" rx="14" fill="#c2e5ff"/><text class="l" x="532" y="112">Fallback 2</text><text class="t" x="532" y="138">Quick fixes</text><text class="s" x="532" y="160">For the host’s check-in type</text></g>
+          <g class="fj-dia"><path d="M860 60 930 130 860 200 790 130z" fill="#ffecbd"/><text x="860" y="136" text-anchor="middle">Inside?</text></g>
+          <g class="fj-end"><rect x="985" y="102" width="115" height="56" rx="28" fill="#cdf4d3"/><text x="1042" y="136" text-anchor="middle">She’s in</text></g>
+          <g class="fj-box"><rect x="20" y="332" width="220" height="96" rx="14" fill="#c2e5ff"/><text class="l" x="42" y="362">Fallback 3</text><text class="t" x="42" y="388">Co-host, then host</text><text class="s" x="42" y="410">One alert, reply lands on screen</text></g>
+          <g class="fj-dia"><path d="M370 310 440 380 370 450 300 380z" fill="#ffecbd"/><text x="370" y="386" text-anchor="middle">Reply?</text></g>
+          <g class="fj-end"><rect x="305" y="490" width="130" height="52" rx="26" fill="#cdf4d3"/><text x="370" y="522" text-anchor="middle">She’s in</text></g>
+          <g class="fj-box"><rect x="500" y="332" width="240" height="96" rx="14" fill="#c2e5ff"/><text class="l" x="522" y="362">Fallback 4</text><text class="t" x="522" y="388">Support reached</text><text class="s" x="522" y="410">Safe spots and backup Airbnbs</text></g>
+          <g class="fj-lane"><rect x="20" y="578" width="1080" height="118" rx="18" fill="none" stroke="#9a9a9a" stroke-width="1.5" stroke-dasharray="6 6"/><text class="l" x="44" y="606">Running alongside every step</text></g>
+          <g class="fj-box"><rect x="44" y="618" width="500" height="60" rx="14" fill="#e4ccff"/><text class="t" x="66" y="644">Keeping the group informed</text><text class="s" x="66" y="664">Friends follow the case on a web link and can carry on if her phone dies</text></g>
+          <g class="fj-box"><rect x="576" y="618" width="500" height="60" rx="14" fill="#ffc7c2"/><text class="t" x="598" y="644">I don’t feel safe</text><text class="s" x="598" y="664">112 first, then Airbnb’s safety line and safe places open nearby</text></g>
+          <g class="fj-end"><rect x="800" y="352" width="300" height="56" rx="28" fill="#cdf4d3"/><text x="950" y="386" text-anchor="middle">Inside, or a bed for four</text></g>
+        </svg>
+      </figure>
+      
+    </section>
+
+    <!-- 04 -->
+    <section class="wrap sec" id="ch4" data-ch="4">
+      <h2 class="h2" data-r="0"><span>Final design</span></h2>
+      <p class="lead" data-r="1">Peers walked through the first version on a phone, thinking out loud. They said it felt like someone was handling things, and four moments got in the way. Each path below starts with the first version, shows where it broke and ends on the night Meera gets now.</p>
+
+      <div class="tpath" id="path-host">
+        <div class="path-head" data-r="0">
+          <p class="lab">Happy path</p>
+          <h3 class="h3">The host answers</h3>
+          <p class="p">The way most lockouts end. The host wakes up and sends a way in.</p>
+        </div>
+        <p class="lab" data-r="0">First version</p>
+        <ol class="v1line" data-r="1">
+          <li><span class="crop"><img src="img/v4-01.png" alt="Trip today with the door code" width="486" height="940" loading="lazy"></span><span>Trips</span></li>
+          <li><span class="crop"><img src="img/v4-02.png" alt="One-tap problem choices" width="486" height="940" loading="lazy"></span><span>What’s going on</span></li>
+          <li><span class="crop"><img src="img/v4-03.png" alt="Two quick fixes for the check-in type" width="486" height="940" loading="lazy"></span><span>Try this first</span></li>
+          <li class="hit"><span class="crop"><img src="img/v4-04.png" alt="A status screen listing every step" width="486" height="940" loading="lazy"></span><span>Every step listed <i class="num" aria-label="Finding 1">1</i></span></li>
+          <li><span class="crop"><img src="img/v4-05a.png" alt="A lock screen alert for the host" width="486" height="940" loading="lazy"></span><span>Host’s phone</span></li>
+          <li class="hit"><span class="crop"><img src="img/v4-06a.png" alt="Chats as two bubbles at the top of the status screen" width="486" height="940" loading="lazy"></span><span>Host replied <i class="num" aria-label="Finding 2">2</i></span></li>
+          <li><span class="crop"><img src="img/v4-06b.png" alt="The chat with a lockbox code" width="486" height="940" loading="lazy"></span><span>The chat</span></li>
+          <li><span class="crop"><img src="img/v4-07.png" alt="You’re in, with the house manual" width="486" height="940" loading="lazy"></span><span>You’re in</span></li>
+        </ol>
+        <p class="lab" data-r="0">What testing showed</p>
+        <ol class="pairs">
+          <li class="pair" data-r="0">
+            <figure><span class="crop"><img src="img/v4-04.png" alt="A status screen listing every step" width="486" height="940" loading="lazy"></span><figcaption>First version</figcaption></figure>
+            <div class="pair-txt"><i class="num" aria-label="Finding 1">1</i><p class="finding">“It feels like a long onboarding.”</p><p class="did">Every step on one screen made the wait feel longer, and a list of stages while time is running out reads as a countdown that causes panic instead of reassuring her. Each wait is now one full-screen step, and the co-host is tried before the host.</p></div>
+            <figure><span class="crop v5"><img src="img/v5/v5-04.webp" alt="Reaching your co-host, one step on screen" width="780" height="1688" loading="lazy"></span><figcaption>After testing</figcaption></figure>
+          </li>
+          <li class="pair" data-r="0">
+            <figure><span class="crop"><img src="img/v4-06a.png" alt="Chats as two bubbles at the top of the status screen" width="486" height="940" loading="lazy"></span><figcaption>First version</figcaption></figure>
+            <div class="pair-txt"><i class="num" aria-label="Finding 2">2</i><p class="finding">“I didn’t know those were chats.”</p><p class="did">The bubbles didn’t read as people. A reply now lands as a message card on the step and opens the chat, and support is a headset beside back.</p></div>
+            <figure><span class="crop v5"><img src="img/v5/v5-06.webp" alt="Your host replied, with the message card above the buttons" width="780" height="1688" loading="lazy"></span><figcaption>After testing</figcaption></figure>
+          </li>
+        </ol>
+        <p class="lab story-lab" data-r="0">Meera’s night now</p>
+        <div class="story" data-steps>
+          <div class="steps">
+            <div class="step" data-step data-show="trips">
+              <span class="t">Trip today</span>
+              <h3>The code gets its own card.</h3>
+              <p class="p">The door code sits on the trip with “Trouble getting in?” right under it, saved on the phone so it opens with no signal.</p>
+            </div>
+            <div class="step" data-step data-show="problem">
+              <span class="t">What’s going on?</span>
+              <h3>One tap names the problem.</h3>
+              <p class="p">Nothing to type at the gate. From here on, support is one tap away beside back.</p>
+            </div>
+            <div class="step" data-step data-show="fixes">
+              <span class="t">Let’s get you in</span>
+              <h3>Quick fixes for this check-in.</h3>
+              <p class="p">Two fixes picked for the check-in type the host set up, here a keypad, solve most lockouts in a minute. Nothing is loading yet because it is her turn, and “Still locked” moves the case on so Meera never has to decide who to wake.</p>
+            </div>
+            <div class="step" data-step data-show="cohost">
+              <span class="t">Reaching your co-host, then host <i class="num" aria-label="Finding 1">1</i></span>
+              <h3>Reaching out to the co-host and the host.</h3>
+              <p class="p">One step on screen, and only the next one is named. The co-host is tried first, and if they don’t pick up the host is alerted on the same screen, where only the face in the ring changes so nothing shifts under her while she waits.</p>
+            </div>
+            <div class="step ghost" data-step data-show="host" aria-hidden="true"></div>
+            <div class="step" data-step data-show="lockexp">
+              <span class="t">The host’s phone</span>
+              <h3>The host gets an alert.</h3>
+              <p class="p">The host gets a single alert. Opened, it offers a quick reply first, then a call, then “On my way” in one tap.</p>
+            </div>
+            <div class="step" data-step data-show="seen">
+              <span class="t">Seen</span>
+              <h3>The ring closes when the host opens it.</h3>
+              <p class="p">A typing bubble fills the wait, so the silence reads as someone writing back.</p>
+            </div>
+            <div class="step" data-step data-show="replied">
+              <span class="t">Your host replied <i class="num" aria-label="Finding 2">2</i></span>
+              <h3>The reply lands where she is already looking.</h3>
+              <p class="p">A message card with “Open chat” sits above the buttons on the same screen, so there is no inbox to dig through.</p>
+            </div>
+            <div class="step" data-step data-show="chat">
+              <span class="t">The chat</span>
+              <h3>A fresh code that disappears.</h3>
+              <p class="p">The host resets the keypad and sends a new code that clears once she’s in. “I’m in” and “Still locked” answer without typing.</p>
+            </div>
+            <div class="step" data-step data-show="in">
+              <span class="t">You’re in</span>
+              <h3>A warm ending.</h3>
+              <p class="p">The last screen points forward to the house manual and the Wi-Fi, since people remember how a night ends more than its middle.</p>
+            </div>
+          </div>
+          <figure class="stage">
+            <figcaption class="vh">The host answers, one screen per step.</figcaption>
+            <div class="deck proto">
+              <iframe src="demo/index.html#trips" title="Working prototype: The host answers, one screen per step." loading="lazy"></iframe>
+              <div class="deck-idx" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </figure>
+        </div>
+      </div>
+
+      <div class="tpath" id="path-nobody">
+        <div class="path-head" data-r="0">
+          <p class="lab">Edge case 1</p>
+          <h3 class="h3">Nobody answers</h3>
+          <p class="p">Both hosts stay asleep, so Airbnb has to carry the rest of the night.</p>
+        </div>
+        <p class="lab" data-r="0">First version</p>
+        <ol class="v1line" data-r="1">
+          <li><span class="crop"><img src="img/v4-08a.png" alt="Support has the case, with the host steps greyed out" width="486" height="940" loading="lazy"></span><span>Support has it</span></li>
+          <li class="hit"><span class="crop"><img src="img/v4-08b.png" alt="Options for tonight offered inside the support chat" width="486" height="940" loading="lazy"></span><span>Options in chat <i class="num" aria-label="Finding 3">3</i></span></li>
+          <li><span class="crop"><img src="img/v4-09.png" alt="Options for tonight, covered by Airbnb" width="486" height="940" loading="lazy"></span><span>A bed tonight</span></li>
+          <li><span class="crop"><img src="img/v4-10.png" alt="Booked for tonight with directions" width="486" height="940" loading="lazy"></span><span>Booked</span></li>
+        </ol>
+        <p class="lab" data-r="0">What testing showed</p>
+        <ol class="pairs">
+          <li class="pair" data-r="0">
+            <figure><span class="crop"><img src="img/v4-08b.png" alt="Options for tonight offered inside the support chat" width="486" height="940" loading="lazy"></span><figcaption>First version</figcaption></figure>
+            <div class="pair-txt"><i class="num" aria-label="Finding 3">3</i><p class="finding">“Picking a place over chat feels risky.”</p><p class="did">Typing in a chat leaves room for error when the stakes are a bed. The safe spot and the backup stay now sit on the screen, one tap each.</p></div>
+            <figure><span class="crop v5"><img src="img/v5/v5-11.webp" alt="A bed for tonight is ready, with the stay and a safe spot on screen" width="780" height="1688" loading="lazy"></span><figcaption>After testing</figcaption></figure>
+          </li>
+        </ol>
+        <p class="lab story-lab" data-r="0">Meera’s night now</p>
+        <div class="story" data-steps>
+          <div class="steps">
+            <div class="step" data-step data-show="noanswer">
+              <span class="t">No answer</span>
+              <h3>The ring empties and the case moves on.</h3>
+              <p class="p">Both hosts stayed silent, so support takes over by itself. A 24-hour café 300 m away is offered while she waits.</p>
+            </div>
+            <div class="step" data-step data-show="support">
+              <span class="t">Airbnb has stepped in <i class="num" aria-label="Finding 3">3</i></span>
+              <h3>Support already knows the night so far.</h3>
+              <p class="p">Ananya’s message arrives in the slot the host’s reply would have used, and she can see every step tried.</p>
+            </div>
+            <div class="step" data-step data-show="bed">
+              <span class="t">A bed for tonight <i class="num" aria-label="Finding 3">3</i></span>
+              <h3>The stay is a card she books in one tap.</h3>
+              <p class="p">A room for four, 1.2 km away and covered by Airbnb, with the safe spot and waiting for the host as the other two choices.</p>
+            </div>
+            <div class="step" data-step data-show="booked">
+              <span class="t">Booked</span>
+              <h3>Directions and a booking code.</h3>
+              <p class="p">No cost to her, the group already knows, and Ananya stays on the case for the rest of the night.</p>
+            </div>
+          </div>
+          <figure class="stage">
+            <figcaption class="vh">Nobody answers, one screen per step.</figcaption>
+            <div class="deck proto">
+              <iframe src="demo/index.html#noanswer" title="Working prototype: Nobody answers, one screen per step." loading="lazy"></iframe>
+              <div class="deck-idx" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            </div>
+          </figure>
+        </div>
+      </div>
+
+      <div class="tpath" id="path-network">
+        <div class="path-head" data-r="0">
+          <p class="lab">Edge case 2</p>
+          <h3 class="h3">Bad network</h3>
+          <p class="p">One bar of signal at 8% battery, where any request can stall.</p>
+        </div>
+        <p class="lab" data-r="0">First version</p>
+        <ol class="v1line" data-r="1">
+          <li class="hit"><span class="crop"><img src="img/v4-11a.png" alt="Waiting for signal with a timer" width="486" height="940" loading="lazy"></span><span>Waiting for signal <i class="num" aria-label="Finding 4">4</i></span></li>
+          <li><span class="crop"><img src="img/v4-11b.png" alt="Still no signal after two minutes" width="486" height="940" loading="lazy"></span><span>Still no signal</span></li>
+        </ol>
+        <p class="lab" data-r="0">What testing showed</p>
+        <ol class="pairs">
+          <li class="pair" data-r="0">
+            <figure><span class="crop"><img src="img/v4-11a.png" alt="Waiting for signal with a timer" width="486" height="940" loading="lazy"></span><figcaption>First version</figcaption></figure>
+            <div class="pair-txt"><i class="num" aria-label="Finding 4">4</i><p class="finding">“Will this work on bad network?”</p><p class="did">The request now queues with a loading bar while calls, 112 and a group link appear on their own. After two minutes it goes as a text.</p></div>
+            <figure><span class="crop v5"><img src="img/v5/v5-13.webp" alt="We’re still trying, with calls, a group link and 112" width="780" height="1688" loading="lazy"></span><figcaption>After testing</figcaption></figure>
+          </li>
+        </ol>
+        <p class="lab story-lab" data-r="0">Meera’s night now</p>
+        <div class="story" data-steps>
+          <div class="steps">
+            <div class="step" data-step data-show="offline">
+              <span class="t">We’re still trying <i class="num" aria-label="Finding 4">4</i></span>
+              <h3>The request waits on the phone.</h3>
+              <p class="p">A light card with a loading bar shows it is still trying. Calling support, texting the group and 112 work without internet, so they appear on their own.</p>
+            </div>
+            <div class="step" data-step data-show="sent">
+              <span class="t">Sent by text <i class="num" aria-label="Finding 4">4</i></span>
+              <h3>After two minutes it goes as a text.</h3>
+              <p class="p">The alert leaves by SMS with nothing for her to do. If the group hasn’t heard from her, Airbnb calls to check in.</p>
+            </div>
+          </div>
+          <figure class="stage">
+            <figcaption class="vh">Bad network, one screen per step.</figcaption>
+            <div class="deck proto">
+              <iframe src="demo/index.html#offline" title="Working prototype: Bad network, one screen per step." loading="lazy"></iframe>
+              <div class="deck-idx" aria-hidden="true"><i></i><i></i></div>
+            </div>
+          </figure>
+        </div>
+      </div>
+
+      <div class="tpath" id="path-group">
+        <div class="path-head" data-r="0">
+          <p class="lab">Edge case 3</p>
+          <h3 class="h3">The group, and feeling unsafe</h3>
+          <p class="p">Two things that run alongside every step of the night.</p>
+        </div>
+        <p class="lab" data-r="0">First version</p>
+        <ol class="v1line" data-r="1">
+          <li><span class="crop"><img src="img/v4-12.png" alt="Pick one friend to follow along" width="486" height="940" loading="lazy"></span><span>Keep your group in the loop</span></li>
+          <li><span class="crop"><img src="img/v4-13.png" alt="You come first, with 112 at the bottom" width="486" height="940" loading="lazy"></span><span>You come first</span></li>
+        </ol>
+        <p class="held" data-r="0">Both held up in testing, so they changed the least.</p>
+        <p class="lab story-lab" data-r="0">Meera’s night now</p>
+        <div class="story" data-steps>
+          <div class="steps">
+            <div class="step" data-step data-show="group">
+              <span class="t">Keep your group in the loop</span>
+              <h3>One friend gets a link.</h3>
+              <p class="p">She picks one person who follows the case in any browser, so someone can carry on if her phone dies.</p>
+            </div>
+            <div class="step" data-step data-show="safety">
+              <span class="t">You come first</span>
+              <h3>Emergency first.</h3>
+              <p class="p">Her case moves to the front of the queue. The safety line and safe places open now sit above a call to 112 within thumb reach.</p>
+            </div>
+          </div>
+          <figure class="stage">
+            <figcaption class="vh">The group and feeling unsafe, one screen per step.</figcaption>
+            <div class="deck proto">
+              <iframe src="demo/index.html#group" title="Working prototype: The group and feeling unsafe, one screen per step." loading="lazy"></iframe>
+              <div class="deck-idx" aria-hidden="true"><i></i><i></i></div>
+            </div>
+          </figure>
+        </div>
+      </div>
+      <p class="p review-p" data-r="0">Design reviews with peers caught six smaller details that quietly broke trust, from a timer that read as a promise to photos that felt staged. Each one was fixed in the final screens.</p>
+    </section>
+
+    <!-- 05 -->
+    <section id="ch5" data-ch="5" class="wrap sec final">
+      <h2 class="h2" data-r="0"><span>The decisions behind the screens</span></h2>
+      <p class="lead" data-r="1">Every screen above answers to what Meera can’t count on at that door.</p>
+      <ul class="dcards" aria-label="What I couldn’t count on and what the screens do about it">
+        <li data-r="0"><img src="img/ill/signal.png" alt="" width="72" height="72" loading="lazy"><p class="k">Can’t count on</p><h4>A signal</h4><p class="why">Data drops in and out, though a text usually gets through.</p><p class="so"><span>So</span>Requests queue and send themselves. After two minutes the alert goes as a text from her phone.</p></li>
+        <li data-r="1"><img src="img/ill/lowbatt.png" alt="" width="72" height="72" loading="lazy"><p class="k">Can’t count on</p><h4>A charged phone</h4><p class="why">At 8% one long call or a heavy page can end it.</p><p class="so"><span>So</span>One light step at a time, and a friend can carry on from a web link if her phone dies.</p></li>
+        <li data-r="2"><img src="img/ill/locked.png" alt="" width="72" height="72" loading="lazy"><p class="k">Can’t count on</p><h4>The lock</h4><p class="why">It is whatever the host installed.</p><p class="so"><span>So</span>The host resets the keypad and sends one code that disappears once she’s in. No smart lock needed.</p></li>
+        <li data-r="0"><img src="img/ill/sleeping.png" alt="" width="72" height="72" loading="lazy"><p class="k">Can’t count on</p><h4>The host</h4><p class="why">Probably asleep with the phone on silent.</p><p class="so"><span>So</span>The co-host is tried first, then the host gets one alert. A reply lands on the step she’s watching.</p></li>
+        <li data-r="1"><img src="img/ill/hourglass.png" alt="" width="72" height="72" loading="lazy"><p class="k">Can’t count on</p><h4>A person on demand</h4><p class="why">Night support has a queue.</p><p class="so"><span>So</span>No clock on screen. Progress names the step, since a time is a promise the queue can break.</p></li>
+        <li data-r="2"><img src="img/ill/robot.png" alt="" width="72" height="72" loading="lazy"><p class="k">Can’t count on</p><h4>Magic</h4><p class="why">No AI guessing what she needs and no new hardware.</p><p class="so"><span>So</span>The fallbacks are fixed buttons on the status screen, so nothing is typed or guessed.</p></li>
+      </ul>
+      <div class="sub assumptions">
+        <h3 class="h3" data-r="0">Assumptions, and what still works if everything fails</h3>
+        <p class="p" data-r="1">What I took as given about Airbnb’s side, and what Meera still has when signal, battery and replies all run out.</p>
+        <ul class="stickies" aria-label="Assumptions I went ahead with">
+          <li data-r="0">The trip and its check-in details are saved on the phone once Meera has opened them before she travels.</li>
+          <li data-r="1">AirCover covers a night like this. The amount stays off the screen because nobody should be weighing prices at the gate.</li>
+          <li data-r="2">Airbnb can move the booking to a nearby stay using the details it already has, with no new checkout.</li>
+          <li data-r="3">An alert only rings through the host’s Do Not Disturb if they allowed it, so it is designed for a phone that is simply on silent.</li>
+        </ul>
+        <div class="net" data-r="0">
+          <p class="lab">If there’s no signal, no battery and no answer yet</p>
+          <div class="net-row">
+            <p><img src="img/ill/phone.png" alt="" width="56" height="56" loading="lazy"><span><b>Saved on the phone.</b> The safety line, the booking and the nearest place open all night work with zero signal.</span></p>
+            <p><img src="img/ill/company.png" alt="" width="56" height="56" loading="lazy"><span><b>Kept by Airbnb.</b> The case keeps running on Airbnb’s side, so whoever reaches out next picks up where it stopped, from any phone.</span></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 04 -->
-    <section class="wrap sec" id="ch4" data-ch="4">
-      <p class="kw" data-r="0"><span>From the brief</span>Messy real-world behaviour</p>
-      <h2 class="h2" data-r="0"><span>Let’s make it concrete.</span></h2>
-      <div class="scene" data-r="1">
-        <div>
-          <p class="lead">Thursday night in Indiranagar, Bengaluru. The stay is Indiranagar Loft on a quiet and badly lit street, and the door code is 4821.</p>
-          <p class="p">The host is asleep and a co-host is listed as a backup contact. In the app they only ever appear as “your host” and “your co-host”. On the other side Ananya is working the night shift in support.</p>
-        </div>
-        <div class="cast">
-          <figure><img class="emo" src="img/ill/meera.png" alt=""><b>Meera</b><span class="meter low" style="--b:.08"><i></i>8%</span></figure>
-          <figure><img class="emo" src="img/ill/aisha.png" alt=""><b>Aisha</b><span class="meter" style="--b:.78"><i></i>78%</span></figure>
-          <figure><img class="emo" src="img/ill/kabir.png" alt=""><b>Kabir</b><span class="meter" style="--b:.41"><i></i>41%</span></figure>
-          <figure><img class="emo" src="img/ill/tara.png" alt=""><b>Tara</b><span class="meter low" style="--b:.12"><i></i>12%</span></figure>
-          <i class="div"></i>
-          <figure><span class="ill c"><img src="img/ill/host.png" alt=""><img class="bd" src="img/ill/zzz.png" alt=""></span><b>The host</b><span>Asleep</span></figure>
-          <figure><img class="emo" src="img/ill/ravi.png" alt=""><b>The co-host</b><span>Backup contact</span></figure>
-          <figure><img class="emo" src="img/ill/support.png" alt=""><b>Ananya</b><span>Night support</span></figure>
-          <figure><span class="ill c"><img src="img/ill/door.png" alt=""><img class="bd" src="img/ill/locked.png" alt=""></span><b>The gate</b><span>Keypad lock</span></figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- 05 -->
-    <section class="wrap sec" id="ch5" data-ch="5">
-      <p class="kw" data-r="0"><span>From the brief</span>Go deep on one focused problem</p>
-      <h2 class="h2" data-r="0"><span>The night asks five questions.</span></h2>
-      <ol class="qs">
-        <li data-r="0"><span class="ill m"><img src="img/ill/bell.png" alt=""><img class="bd" src="img/ill/stopwatch.png" alt=""></span><p>Can we reassure Meera within a minute that someone is already working on it?</p></li>
-        <li data-r="0"><span class="ill m"><img src="img/ill/phone.png" alt=""><img class="bd" src="img/ill/lowbatt.png" alt=""></span><p>Can that still work at 8% with one bar of signal?</p></li>
-        <li data-r="0"><span class="ill m"><img src="img/ill/host.png" alt=""><img class="bd" src="img/ill/zzz.png" alt=""></span><p>If the host can’t be reached, can we stop her wasting effort and go straight to what still helps?</p></li>
-        <li data-r="0"><span class="ill m"><img src="img/ill/bed.png" alt=""><img class="bd" src="img/ill/hourglass.png" alt=""></span><p>Can she have a real option for the night by minute ten?</p></li>
-        <li data-r="0"><span class="ill m"><img src="img/ill/group.png" alt=""><img class="bd" src="img/ill/link.png" alt=""></span><p>And what about the three people standing next to her?</p></li>
-      </ol>
-      <div class="firstp" data-r="0">
-        <p class="p">I wrote these as questions the night itself would ask, not as a list of features. Each one comes from a link in the chain where Meera was left on her own.</p>
-        <p class="p">Each one also had to hold up for the host and for Airbnb. From here on every idea needed to answer at least one of them, or it didn’t belong in the night.</p>
-      </div>
-    </section>
-
     <!-- 06 -->
-    <section class="wrap sec limits" id="ch6" data-ch="6">
-      <p class="kw" data-r="0"><span>From the brief</span>Practical and feasible, no magic AI or hardware</p>
-      <h2 class="h2" data-r="0"><span>And what can’t I count on when I’m at that door?</span></h2>
-      <p class="lead" data-r="1">Before drawing a single screen I listed what the night takes away. These became the hard edges of every idea.</p>
-      <div class="grid3 mt">
-        <div class="card" data-r="0"><img class="emo s" src="img/ill/signal.png" alt=""><div><h4>A signal</h4><p>Data drops in and out. A text message usually gets through when an app request doesn’t.</p></div></div>
-        <div class="card" data-r="1"><img class="emo s" src="img/ill/lowbatt.png" alt=""><div><h4>A charged phone</h4><p>At 8% one long call or a heavy page can end it, so every screen has to be light.</p></div></div>
-        <div class="card" data-r="2"><img class="emo s" src="img/ill/locked.png" alt=""><div><h4>The lock itself</h4><p>It is whatever the host installed, so the answer can’t depend on a smart lock.</p></div></div>
-        <div class="card" data-r="0"><img class="emo s" src="img/ill/sleeping.png" alt=""><div><h4>The host</h4><p>They are probably asleep with the phone on silent, and that is normal at that hour.</p></div></div>
-        <div class="card" data-r="1"><img class="emo s" src="img/ill/support.png" alt=""><div><h4>A person on demand</h4><p>Night support exists but it has a queue, so I can’t promise a time.</p></div></div>
-        <div class="card" data-r="2"><img class="emo s" src="img/ill/robot.png" alt=""><div><h4>Magic</h4><p>No AI that guesses what she needs and no hardware Airbnb doesn’t already own.</p></div></div>
+    <section class="wrap sec" id="ch6" data-ch="6">
+      <h2 class="h2" data-r="0"><span>Who pays for this, and what stops someone abusing it?</span></h2>
+      <p class="lead" data-r="1">Each generous moment is tied to something the system can check, so “can’t get in” never becomes a free refund button.</p>
+      <div class="payrow">
+        <div class="receipt" data-r="0">
+          <p class="r-head"><img src="img/ill/receipt.png" alt="" width="40" height="40" loading="lazy">Checked before anything generous happens</p>
+          <ul>
+            <li><b>A stay only appears after logged attempts</b><span>Someone who isn’t at the door can’t produce an alert, a call and a wait, so there is nothing to tap through to a free night.</span></li>
+            <li><b>Codes expire and every reveal is logged</b><span>A screenshot or a lost phone can’t open the door the next day.</span></li>
+            <li><b>The host’s payout is held and not cut</b><span>Locks fail in ways nobody predicts, so the host is reviewed fairly instead of penalised automatically.</span></li>
+            <li><b>The group link sees one case only</b><span>It expires, Meera can end it at any time and it never shows payment or personal details.</span></li>
+            <li><b>Text messages only during an active lockout</b><span>That keeps the cost of SMS small and tied to a real case.</span></li>
+          </ul>
+          <p class="r-total"><span>Refunds handed out at the gate</span><b>0</b></p>
+        </div>
+        <div class="chips" data-r="1">
+          <p class="lab">Already exists</p>
+          <ul class="chip-old"><li>AirCover and its check-in rules</li><li>Host and co-host contacts on every booking</li><li>Messaging and push notifications</li><li>Night support and its queue</li><li>Trip details shown before arrival</li></ul>
+          <p class="lab">New</p>
+          <ul class="chip-new"><li>A case with an attempt log</li><li>One-tap problem choices</li><li>Lock screen replies for the host</li><li>Requests that wait for signal and send themselves</li><li>A web link for the group</li><li>Replies and fallbacks on one status screen</li></ul>
+        </div>
       </div>
-      <div class="sub tight">
-        <p class="kw" data-r="0"><span>From the brief</span>State assumptions and trade-offs</p>
-        <h3 class="h3" data-r="0">Going ahead with a few assumptions</h3>
-        <ul class="assume" data-r="1">
-          <li><img class="emo" src="img/ill/phone.png" alt=""><span>The trip and its check-in details are saved on the phone once Meera has opened them before she travels.</span></li>
-          <li><img class="emo" src="img/ill/shield.png" alt=""><span>AirCover covers a night like this. I left the amount off the screen on purpose because nobody should be weighing prices at the gate.</span></li>
-          <li><img class="emo" src="img/ill/hotel.png" alt=""><span>Airbnb can move the booking to a nearby stay using the details it already has, with no new checkout for Meera.</span></li>
-          <li><img class="emo" src="img/ill/bell.png" alt=""><span>An alert can only ring through the host’s Do Not Disturb if they have allowed it. The alert is still designed for a phone that is simply on silent.</span></li>
-        </ul>
+    </section>
+
+    <!-- the people the night touches -->
+    <section class="wrap sec" id="people">
+      <h2 class="h2" data-r="0"><span>One lockout, four sides to it</span></h2>
+      <p class="lead" data-r="1">How I thought about each person the night touches, and what the design does for them.</p>
+      <div class="hub" data-r="2">
+        <svg class="hub-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50 50 15 18M50 50 85 18M50 50 15 82M50 50 85 82"/></svg>
+        <div class="hub-core"><img src="img/ill/door.png" alt="" width="72" height="72" loading="lazy"><b>1:45 AM</b><span>a door that won’t open</span></div>
+        <div class="side s1"><img src="img/ill/meera.png" alt="" width="64" height="64" loading="lazy"><h4>Meera and friends</h4><p>Catered to mainly by showing them the support and help on offer, so at every step they can see someone is on it.</p></div>
+        <div class="side s2"><img src="img/ill/host.png" alt="" width="64" height="64" loading="lazy"><h4>The host</h4><p>Ringing them again and again is pointless, so they are rung once and Airbnb helps on their behalf, which keeps the chance of it escalating low.</p></div>
+        <div class="side s3"><img src="img/ill/support.png" alt="" width="64" height="64" loading="lazy"><h4>Night support</h4><p>Support arrives with the full context, so there is less back and forth and less time before someone acts.</p></div>
+        <div class="side s4"><img src="img/ill/company.png" alt="" width="64" height="64" loading="lazy"><h4>Airbnb</h4><p>Fewer bad nights and low ratings, without offering refunds outright.</p></div>
       </div>
     </section>
 
     <!-- 07 -->
     <section class="wrap sec" id="ch7" data-ch="7">
-      <p class="kw" data-r="0"><span>From the brief</span>Practical and feasible</p>
-      <h2 class="h2" data-r="0"><span>Picking up the pen</span></h2>
-      <p class="lead" data-r="1">Ideation started from the five questions. I wrote fifty ideas against them and then weighed each one against the limits above, the goals of the brief and the ten-minute aim.</p>
-      <p class="p" data-r="1">They ranged from things Airbnb could ship next sprint to things that would be ideal but hard.</p>
-      <div class="legend" data-r="2"><span><img class="emo xs" src="img/ill/star.png" alt="">Made it into the flow</span><span><img class="emo xs" src="img/ill/warning.png" alt="">Left out</span><span>Hover or tap any idea to see why</span></div>
-      <div class="ideas" data-r="0">
-        <div class="col">
-          <h4><img class="emo xs" src="img/ill/bell.png" alt="">Reassured within a minute</h4>
-          <div class="idea in"><button type="button"><img class="emo" src="img/ill/star.png" alt="Made it in">A receipt that says when the next update comes</button><p class="pop" role="tooltip"><b>Made it in</b>Telling her when the next update comes turns an open wait into a short one. It is the first thing Meera sees after she asks for help.</p></div>
-          <div class="idea in"><button type="button"><img class="emo" src="img/ill/star.png" alt="Made it in">A live log of every attempt</button><p class="pop" role="tooltip"><b>Made it in</b>Seeing “Ringing your host” as it happens shows the work being done. The same log later protects the host and helps support.</p></div>
-          <div class="idea out"><button type="button"><img class="emo" src="img/ill/warning.png" alt="Left out">A named person joins at a set time</button><p class="pop" role="tooltip"><b>Left out</b>A named person at a fixed time is a promise night support can’t always keep. The flow gives an honest estimate instead.</p></div>
-          <div class="idea out"><button type="button"><img class="emo" src="img/ill/warning.png" alt="Left out">A human picks up in under a minute, every time</button><p class="pop" role="tooltip"><b>Left out</b>This would need a large night team at all times. It is the ideal, but not something Airbnb could ship.</p></div>
-        </div>
-        <div class="col">
-          <h4><img class="emo xs" src="img/ill/lowbatt.png" alt="">At 8% and one bar</h4>
-          <div class="idea in"><button type="button"><img class="emo" src="img/ill/star.png" alt="Made it in">Requests that wait for signal and send themselves</button><p class="pop" role="tooltip"><b>Made it in</b>“Waiting for signal” and then “Sent” stops her from tapping send again and again on a dying phone.</p></div>
-          <div class="idea in"><button type="button"><img class="emo" src="img/ill/star.png" alt="Made it in">Send it by text when there’s no signal</button><p class="pop" role="tooltip"><b>Made it in</b>After two minutes without signal the alert goes out as a text from her phone on its own. There is no setting to turn on first.</p></div>
-          <div class="idea out"><button type="button"><img class="emo" src="img/ill/warning.png" alt="Left out">A phone line with a case PIN</button><p class="pop" role="tooltip"><b>Left out</b>Useful, but it is a whole new phone system to run. Support calling her back covers most of the same need.</p></div>
-          <div class="idea out"><button type="button"><img class="emo" src="img/ill/warning.png" alt="Left out">Check-in details in the phone’s wallet</button><p class="pop" role="tooltip"><b>Left out</b>It helps her find the code but does nothing once the lock fails, which is the real problem here.</p></div>
-        </div>
-        <div class="col">
-          <h4><img class="emo xs" src="img/ill/sleeping.png" alt="">Reaching the host gently</h4>
-          <div class="idea in"><button type="button"><img class="emo" src="img/ill/star.png" alt="Made it in">One bundled alert instead of ten messages</button><p class="pop" role="tooltip"><b>Made it in</b>The host gets one alert that rings through only if they allowed it, instead of a stream of messages and calls.</p></div>
-          <div class="idea in"><button type="button"><img class="emo" src="img/ill/star.png" alt="Made it in">Replies the host can tap from the lock screen</button><p class="pop" role="tooltip"><b>Made it in</b>The first glance offers one action, “Message Meera”. A call and a quick “On my way” sit one step deeper.</p></div>
-          <div class="idea out"><button type="button"><img class="emo" src="img/ill/warning.png" alt="Left out">Keep calling until they answer</button><p class="pop" role="tooltip"><b>Left out</b>It might work once, but hosts who get woken repeatedly stop hosting late arrivals.</p></div>
-          <div class="idea out"><button type="button"><img class="emo" src="img/ill/warning.png" alt="Left out">Unlock the smart lock remotely</button><p class="pop" role="tooltip"><b>Left out</b>Most hosts don’t own one. The answer has to work with any lock.</p></div>
-        </div>
-        <div class="col">
-          <h4><img class="emo xs" src="img/ill/bed.png" alt="">An option by minute ten</h4>
-          <div class="idea in"><button type="button"><img class="emo" src="img/ill/star.png" alt="Made it in">Stages that fill as each attempt finishes</button><p class="pop" role="tooltip"><b>Made it in</b>“Step 2 of 4 · Reaching your host” says how far along the night is without putting a time on anything that hasn’t happened.</p></div>
-          <div class="idea in"><button type="button"><img class="emo" src="img/ill/star.png" alt="Made it in">Nearby stays that fit four, ready to book</button><p class="pop" role="tooltip"><b>Made it in</b>Only places that are open now and fit the group are shown, with the booking details already moved over.</p></div>
-          <div class="idea out"><button type="button"><img class="emo" src="img/ill/warning.png" alt="Left out">A countdown to the options</button><p class="pop" role="tooltip"><b>Left out after review</b>A countdown to the options was in round three. A time on screen is a promise the host or the queue can break, so it went in round four.</p></div>
-          <div class="idea out"><button type="button"><img class="emo" src="img/ill/warning.png" alt="Left out">“Can’t get in? Tonight is free.”</button><p class="pop" role="tooltip"><b>Left out</b>A free night for anyone who taps a button would be abused. Options only appear inside the support chat, after the attempts are logged.</p></div>
-          <div class="idea out"><button type="button"><img class="emo" src="img/ill/warning.png" alt="Left out">A guaranteed room at a partner hotel</button><p class="pop" role="tooltip"><b>Left out</b>Partnerships in every city are a long-term business deal. It stays on the list as a later ideal.</p></div>
-        </div>
-        <div class="col">
-          <h4><img class="emo xs" src="img/ill/group.png" alt="">The three beside her</h4>
-          <div class="idea in"><button type="button"><img class="emo" src="img/ill/star.png" alt="Made it in">“Do you feel safe where you are?”</button><p class="pop" role="tooltip"><b>Made it in</b>Saying no moves the case to the front of the queue and shows safe places nearby.</p></div>
-          <div class="idea in"><button type="button"><img class="emo" src="img/ill/star.png" alt="Made it in">Friends follow the case on a web link</button><p class="pop" role="tooltip"><b>Made it in</b>If Meera’s phone dies, Aisha can carry on from a link that opens in any browser without the app.</p></div>
-          <div class="idea out"><button type="button"><img class="emo" src="img/ill/warning.png" alt="Left out">A local partner brings a spare key</button><p class="pop" role="tooltip"><b>Left out</b>It only works in a few big cities and needs a fleet of people at night. That is the kind of operation the brief rules out.</p></div>
-          <div class="idea out"><button type="button"><img class="emo" src="img/ill/warning.png" alt="Left out">The app notices she seems lost</button><p class="pop" role="tooltip"><b>Left out</b>Guessing her state from sensors is magic. Asking her one clear question is honest and works better.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 08 -->
-    <section class="wrap sec" id="ch8" data-ch="8">
-      <p class="kw" data-r="0"><span>From the brief</span>Edge cases and failure states</p>
-      <h2 class="h2" data-r="0"><span>So how do fifty ideas become one night?</span></h2>
-      <p class="lead" data-r="1">The ideas that made it became a ladder of fallbacks. Each step gives Meera something she can see, and if it doesn’t work the next one takes over without her having to start again.</p>
-      <ol class="ladder">
-        <li class="card" data-r="0"><p class="lab">Fallback 1 · reassure</p><h4>We’ve got it</h4><p>One tap opens a case and she sees right away that it is being handled. If there is no signal the request waits and sends itself.</p><p class="next">Then the host’s own fixes</p></li>
-        <li class="card" data-r="1"><p class="lab">Fallback 2 · fix it on the spot</p><h4>The host’s own fixes</h4><p>Two steps from the host’s guide, the same local knowledge they would give on the phone, before anyone is woken up.</p><p class="next">If she’s still locked out</p></li>
-        <li class="card" data-r="2"><p class="lab">Fallback 3 · reach the host</p><h4>One alert, then the co-host</h4><p>Airbnb rings the host once with an alert they allowed, and tries the co-host if nobody answers. Replies land on the screen she is watching.</p><p class="next">If neither picks up</p></li>
-        <li class="card" data-r="3"><p class="lab">Fallback 4 · Airbnb takes over</p><h4>Support with the whole story</h4><p>Support joins with every attempt already logged, and options for the night appear in that chat with the booking moved over.</p><p class="next end">Inside, or a bed for four</p></li>
-      </ol>
-      <div class="along">
-        <p class="lab" data-r="0">Running alongside every step</p>
-        <div class="grid3">
-          <div class="card" data-r="0"><img class="emo s" src="img/ill/signal.png" alt=""><div><h4>No signal</h4><p>The alert goes out as a text from her phone on its own.</p></div></div>
-          <div class="card" data-r="1"><img class="emo s" src="img/ill/shield.png" alt=""><div><h4>Not feeling safe</h4><p>Emergency services first, then Airbnb’s safety line and places open nearby.</p></div></div>
-          <div class="card" data-r="2"><img class="emo s" src="img/ill/link.png" alt=""><div><h4>Phone about to die</h4><p>One friend follows the case on a web link and carries on from there.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 09 -->
-    <section class="wrap flow sec" id="ch9" data-ch="9" data-steps>
-      <div class="story">
-        <div class="steps">
-          <div class="step" data-step>
-            <p class="kw" data-r="0"><span>From the brief</span>End-to-end core flow</p>
-            <h2 class="h2"><span>Now, back to the door.</span></h2>
-            <span class="t">Trip today</span>
-            <h3>The code is already on her phone.</h3>
-            <p class="p">The trip opens on the door code, saved earlier so nothing needs a signal, and only Meera can see it. Her friends sit on the trip as a stack of faces. When the code fails, help is one obvious tap away.</p>
-          </div>
-          <div class="step" data-step>
-            <span class="t">What’s going on?</span>
-            <h3>One tap and no typing.</h3>
-            <p class="p">She picks “The code isn’t working” and reads that her host only hears from Airbnb if the quick fixes don’t work.</p>
-            <p class="behind"><img class="emo" src="img/ill/receipt.png" alt="">A case opens and the ten minute clock starts behind the scenes. If there is no signal the request waits and sends itself.</p>
-          </div>
-          <div class="step" data-step>
-            <span class="t">Try this first</span>
-            <h3>The host’s own fixes, before waking them.</h3>
-            <p class="p">Two steps from the host’s guide give her the same local knowledge they would on the phone. “Alert now” is there if she can’t wait, so she stays in control.</p>
-          </div>
-          <div class="step" data-step>
-            <span class="t">We’re on it</span>
-            <h3>She can see every attempt and how far along it is.</h3>
-            <p class="p">A bar fills one stage at a time, from the quick fixes to the host, the co-host and Airbnb support. Nothing that hasn’t happened yet has a time on it, so nothing on the screen can turn out to be wrong.</p>
-            <p class="behind"><img class="emo" src="img/ill/call.png" alt="">Airbnb rings the host’s phone with an alert they chose to allow, so Meera doesn’t have to call. Chats with the host and with support wait as two bubbles at the top.</p>
-          </div>
-          <div class="step" data-step>
-            <span class="t">The host’s lock screen</span>
-            <h3>One glance, one action.</h3>
-            <p class="p">The alert is small and offers a single thing, “Message Meera”. The door code never appears on the lock screen.</p>
-          </div>
-          <div class="step" data-step>
-            <span class="t">Opened</span>
-            <h3>Message first, then a call.</h3>
-            <p class="p">Opening the alert shows three replies in order of effort. Messaging Meera comes first, then a call, then “On my way” in one tap.</p>
-          </div>
-          <div class="step" data-step>
-            <span class="t">Your host replied</span>
-            <h3>The reply shows up where she is already looking.</h3>
-            <p class="p">The step turns green, the host’s chat bubble gets a badge and a preview of the reply appears on the hub, so she doesn’t have to go looking in her inbox.</p>
-          </div>
-          <div class="step" data-step>
-            <span class="t">The chat</span>
-            <h3>A code that disappears.</h3>
-            <p class="p">The lockbox code arrives as a card inside the chat with the host, set to disappear later that night. Quick replies let her answer “I’m in” or “Still locked” without typing.</p>
-          </div>
-          <div class="step" data-step>
-            <span class="t">You’re in</span>
-            <h3>Get some rest.</h3>
-            <p class="p">The last screen doesn’t remind her of the lockout. People remember the end of a night more than its middle, so it points forward to the house manual and the Wi-Fi details and closes with one button.</p>
-          </div>
-        </div>
-        <figure class="stage">
-          <figcaption class="vh">The happy path, one screen per step.</figcaption>
-          <div class="deck">
-            <div class="ph"><img src="img/v4-01.png" alt="Trip today with the door code visible only to Meera and the group shown as stacked avatars" width="486" height="940"></div>
-            <div class="ph"><img src="img/v4-02.png" alt="What’s going on, with one-tap problem choices" width="486" height="940"></div>
-            <div class="ph"><img src="img/v4-03.png" alt="Try this first, with two fixes from the host’s guide" width="486" height="940"></div>
-            <div class="ph"><img src="img/v4-04.png" alt="We’re on it, Meera, with a four-stage bar and the steps tried so far" width="486" height="940"></div>
-            <div class="ph"><img src="img/v4-05a.png" alt="A small lock screen alert for the host with one action, Message Meera" width="486" height="940"></div>
-            <div class="ph"><img src="img/v4-05b.png" alt="The expanded alert with Message Meera, Call Meera and an On my way reply" width="486" height="940"></div>
-            <div class="ph"><img src="img/v4-06a.png" alt="The hub showing your host replied, with a badge on the host chat and a preview" width="486" height="940"></div>
-            <div class="ph"><img src="img/v4-06b.png" alt="The chat with the host, with a lockbox code card that disappears at 3 AM" width="486" height="940"></div>
-            <div class="ph"><img src="img/v4-07.png" alt="You’re in, with the house manual and Wi-Fi details and a Close button" width="486" height="940"></div>
-            <div class="deck-idx" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          </div>
-        </figure>
-      </div>
-    </section>
-
-    <!-- 10 -->
-    <section class="wrap sec" id="ch10" data-ch="10">
-      <p class="kw" data-r="0"><span>From the brief</span>Edge cases and failure states</p>
-      <h2 class="h2" data-r="0"><span>But what if the host never wakes up?</span></h2>
-      <div class="edge first wide">
-        <div data-r="0">
-          <p class="lead">Then Airbnb carries the rest of the night.</p>
-          <p class="p">When nobody picks up, the hub shows that the host and co-host didn’t pick up and that Ananya from Airbnb support has the case, with every attempt already in front of her. Her chat opens as a real conversation, and options for the night only appear in there once the attempts are logged.</p>
-          <p class="p">A stay for four close by is booked with the details moved over, so there is no new checkout. The new stay is covered by Airbnb, and a button to message support stays on the booked screen.</p>
-        </div>
-        <div class="shots four">
-          <figure class="shot" data-r="0"><div class="ph"><img src="img/v4-08a.png" alt="The hub showing Airbnb support has the case, with the host and co-host steps greyed out" width="486" height="940" loading="lazy"></div><figcaption><b>Support has it</b></figcaption></figure>
-          <figure class="shot" data-r="1"><div class="ph"><img src="img/v4-08b.png" alt="A chat with Ananya from Airbnb support with an options card and quick replies" width="486" height="940" loading="lazy"></div><figcaption><b>A real chat</b></figcaption></figure>
-          <figure class="shot" data-r="2"><div class="ph"><img src="img/v4-09.png" alt="Options for tonight, covered by Airbnb" width="486" height="940" loading="lazy"></div><figcaption><b>Covered by Airbnb</b></figcaption></figure>
-          <figure class="shot" data-r="3"><div class="ph"><img src="img/v4-10.png" alt="Booked for tonight with directions and a message support button" width="486" height="940" loading="lazy"></div><figcaption><b>Booked nearby</b></figcaption></figure>
-        </div>
-      </div>
-
-      <div class="edge">
-        <div data-r="0">
-          <h3 class="h3">And if her phone dies first?</h3>
-          <p class="p">Losing the signal doesn’t stop anything. The screen shows a low-signal icon, a bar and a timer so she knows how long it has been waiting, and if calls still work she can ring Airbnb support straight away.</p>
-          <p class="p">After two minutes the alert goes out as a text from her phone on its own, and the updates sit right under the network card. She is offered the nearest safe place or a link for her group, and if nobody is following along a few minutes later Airbnb calls her to check in.</p>
-          <p class="p">The link goes to one friend she picks, with their number shown and a “Not right?” link to fix it. A small note says that when she is offline the text goes from her phone at her usual SMS rate.</p>
-        </div>
-        <div class="shots">
-          <figure class="shot" data-r="0"><div class="ph"><img src="img/v4-11a.png" alt="Waiting for signal, with a loading bar, a timer and a call support option" width="486" height="940" loading="lazy"></div><figcaption><b>Waiting for signal</b></figcaption></figure>
-          <figure class="shot" data-r="1"><div class="ph"><img src="img/v4-11b.png" alt="Still no signal after two minutes, the alert sent by text and two options" width="486" height="940" loading="lazy"></div><figcaption><b>Two minutes later</b></figcaption></figure>
-          <figure class="shot" data-r="2"><div class="ph"><img src="img/v4-12.png" alt="Pick one friend to follow along, with phone numbers and a Not right link" width="486" height="940" loading="lazy"></div><figcaption><b>One friend follows along</b></figcaption></figure>
-        </div>
-      </div>
-
-      <div class="edge">
-        <div data-r="0">
-          <h3 class="h3">And if she just doesn’t feel safe?</h3>
-          <p class="p">“I don’t feel safe” sits at the top of every help screen. One tap offers a call to 112 first, because a real emergency shouldn’t wait for Airbnb. After that comes Airbnb’s 24-hour safety line, which already exists as its Urgent Support Line, and a list of places nearby that are open right now.</p>
-        </div>
-        <div class="shots one">
-          <figure class="shot" data-r="0"><div class="ph"><img src="img/v4-13.png" alt="Safety screen with emergency call, safety line and safe places nearby" width="486" height="940" loading="lazy"></div><figcaption><b>Emergency first, then Airbnb</b></figcaption></figure>
-        </div>
-      </div>
-
-      <div class="edge">
-        <div data-r="0">
-          <h3 class="h3">And what if everything fails?</h3>
-          <p class="p">No signal, no battery and no answer from the queue yet. Even then Meera isn’t starting from nothing, because two things don’t depend on her phone being alive.</p>
-        </div>
-        <div class="fails" data-r="1">
-          <div class="card"><span class="ill s"><img src="img/ill/phone.png" alt=""><img class="bd" src="img/ill/signal.png" alt=""></span><div><h4>Saved on the phone</h4><p>The safety line, the booking and the nearest place open all night work with zero signal.</p></div></div>
-          <div class="card"><span class="ill s"><img src="img/ill/notepad.png" alt=""><img class="bd" src="img/ill/company.png" alt=""></span><div><h4>Kept by Airbnb</h4><p>The case keeps running on Airbnb’s side, so whoever reaches out next picks up where it stopped from any phone.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 11 -->
-    <section class="wrap sec" id="ch11" data-ch="11">
-      <p class="kw" data-r="0"><span>From the brief</span>Fraud and abuse prevention</p>
-      <h2 class="h2" data-r="0"><span>Who pays for this, and what stops someone abusing it?</span></h2>
-      <p class="lead" data-r="1">These are the design decisions that keep the flow generous to Meera without turning “can’t get in” into a free refund button. Each one ties a generous moment to something the system can check.</p>
-      <ul class="gates" data-r="2">
-        <li><img class="emo s" src="img/ill/notepad.png" alt=""><b>Options only appear in the support chat, after logged attempts</b><span>Someone who isn’t at the door can’t produce a host alert, a call and a wait, and there is nothing on the hub to tap through to a free night.</span></li>
-        <li><img class="emo s" src="img/ill/key.png" alt=""><b>Codes expire and every reveal is logged</b><span>A screenshot or a lost phone can’t open the door the next day.</span></li>
-        <li><img class="emo s" src="img/ill/sleeping.png" alt=""><b>The host’s payout is held and not cut</b><span>Locks fail in ways nobody predicts, so the host is reviewed fairly instead of penalised automatically.</span></li>
-        <li><img class="emo s" src="img/ill/link.png" alt=""><b>The group link sees one case only</b><span>It expires, Meera can end it at any time and it never shows payment or personal details.</span></li>
-        <li><img class="emo s" src="img/ill/money.png" alt=""><b>Text messages only during an active lockout</b><span>That keeps the cost of SMS small and tied to a real case.</span></li>
-      </ul>
-
-      <div class="sub tight">
-        <p class="kw" data-r="0"><span>From the brief</span>Balance user needs with company goals</p>
-        <h3 class="h3" data-r="0">Who ends up with what?</h3>
-        <div class="people">
-          <div class="card" data-r="0"><img class="emo" src="img/ill/meera.png" alt=""><h4>Meera and friends</h4><p>Always know the next step and how far along it is, and end up inside or in a bed without typing once. If Meera’s phone dies a friend carries on from a link.</p></div>
-          <div class="card" data-r="1"><img class="emo" src="img/ill/host.png" alt=""><h4>The host</h4><p>Rung once at most, only if they allowed it, with a reply they can send from the lock screen. They wake up to a fair record and not a pile of missed calls.</p></div>
-          <div class="card" data-r="2"><img class="emo" src="img/ill/support.png" alt=""><h4>Night support</h4><p>One case instead of six threads, joined only when the host couldn’t fix it and with the whole story attached.</p></div>
-          <div class="card" data-r="3"><img class="emo" src="img/ill/company.png" alt=""><h4>Airbnb</h4><p>An early fix that costs less than a refund, a rebooking and a one-star review, with hosts protected and abuse limited.</p></div>
-        </div>
-      </div>
-
-      <div class="sub tight">
-        <p class="kw" data-r="0"><span>From the brief</span>Practical and feasible</p>
-        <h3 class="h3" data-r="0">How much of this is new?</h3>
-        <p class="p" data-r="1">Less than it looks. Most of the flow rearranges things Airbnb already runs so that they show up in the right order at the right moment.</p>
-        <div class="split">
-          <div class="card" data-r="0"><h4>Already exists</h4><ul><li>AirCover and its check-in rules</li><li>Host and co-host contacts on every booking</li><li>Messaging and push notifications</li><li>Night support and its queue</li><li>Trip details shown before arrival</li></ul></div>
-          <div class="card new" data-r="1"><h4>New</h4><ul><li>A case with a clock and an attempt log</li><li>One-tap problem choices</li><li>Lock screen replies for the host</li><li>Requests that wait for signal and send themselves</li><li>A web link for the group</li><li>A ringing alert the host opts in to</li><li>Chats with the host and support on one screen</li></ul></div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- 12 -->
-    <section class="wrap sec" id="ch12" data-ch="12">
-      <p class="kw" data-r="0"><span>From the brief</span>Light research and testing</p>
       <h2 class="h2" data-r="0"><span>The process followed</span></h2>
-      <p class="lead" data-r="1">The story above reads in a straight line, but the work moved through these stages and looped back more than once.</p>
-      <ol class="proc" data-r="2">
-        <li><span>1</span><div><b>Current app findings</b>Broke Meera’s night into the links that failed</div></li>
-        <li><span>2</span><div><b>Current app audit</b>Tried every route to help on a real booking</div></li>
-        <li><span>3</span><div><b>Online secondary research</b>Looked at how six other products handle it</div></li>
-        <li><span>4</span><div><b>Ideation</b>Fifty ideas against the five questions</div></li>
-        <li><span>5</span><div><b>Idea scoring</b>Judged against the limits, the brief and the aim</div></li>
-        <li><span>6</span><div><b>Design</b>Four rounds of screens, checked against the brief</div></li>
-        <li><span>7</span><div><b>Testing</b>Peers walking through the prototype</div></li>
-        <li><span>8</span><div><b>Final design</b>The flow shown above</div></li>
-      </ol>
+      <p class="lead" data-r="1">From a walkthrough of the app as it is today to a working prototype, with peer testing in the middle shaping the second version.</p>
+      <figure class="procfj" data-r="2">
+        <svg viewBox="0 0 1120 820" role="img" aria-labelledby="proct">
+          <title id="proct">The process as a board. Research: current app walkthrough, then competitive research. Ideas: ideation, then scoring. First version: design v1, then its edge cases. Testing: user testing, whose findings shaped version 2. Second version: v2, then its edge cases. Prototyping: a working prototype.</title>
+          <defs>
+            <pattern id="pjdots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#d6d6d6"/></pattern>
+            <marker id="pjarr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#333"/></marker>
+            <filter id="pjsh" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity=".12"/></filter>
+          </defs>
+          <rect width="1120" height="820" rx="24" fill="#f7f7f7"/>
+          <rect width="1120" height="820" rx="24" fill="url(#pjdots)"/>
+          <g class="pj-sec">
+            <rect x="20" y="52" width="500" height="200" rx="16"/><rect x="560" y="52" width="540" height="200" rx="16"/>
+            <rect x="20" y="312" width="500" height="200" rx="16"/><rect x="560" y="312" width="540" height="200" rx="16"/>
+            <rect x="20" y="572" width="500" height="200" rx="16"/><rect x="560" y="572" width="540" height="200" rx="16"/>
+          </g>
+          <g class="pj-tab">
+            <rect x="20" y="22" width="96" height="26" rx="8"/><text x="68" y="40" text-anchor="middle">Research</text>
+            <rect x="560" y="22" width="66" height="26" rx="8"/><text x="593" y="40" text-anchor="middle">Ideas</text>
+            <rect x="20" y="282" width="122" height="26" rx="8"/><text x="81" y="300" text-anchor="middle">First version</text>
+            <rect x="560" y="282" width="80" height="26" rx="8"/><text x="600" y="300" text-anchor="middle">Testing</text>
+            <rect x="20" y="542" width="140" height="26" rx="8"/><text x="90" y="560" text-anchor="middle">Second version</text>
+            <rect x="560" y="542" width="112" height="26" rx="8"/><text x="616" y="560" text-anchor="middle">Prototyping</text>
+          </g>
+          <g class="pj-lines" fill="none" stroke="#333" stroke-width="2" marker-end="url(#pjarr)">
+            <path d="M244 152H284"/><path d="M484 152H596"/><path d="M796 152H846"/>
+            <path d="M946 207V282H144V357"/>
+            <path d="M244 412H284"/><path d="M484 412H596"/><path d="M796 412H846" stroke-dasharray="4 4" marker-end="none"/>
+            <path d="M696 467V538H144V617"/>
+            <path d="M244 672H284"/><path d="M484 672H596"/>
+          </g>
+          <text class="pj-note" x="420" y="532" text-anchor="middle">findings shape version 2</text>
+          <g class="pj-st" filter="url(#pjsh)">
+            <g transform="rotate(-1.5 144 152)"><rect x="44" y="97" width="200" height="110" rx="4" fill="#c2e5ff"/><text class="n" x="60" y="123">1</text><text class="t" x="60" y="147">Current app walkthrough</text><text class="s" x="60" y="170">Every route to help</text><text class="s" x="60" y="188">on a real booking</text></g>
+            <g transform="rotate(1 384 152)"><rect x="284" y="97" width="200" height="110" rx="4" fill="#c2e5ff"/><text class="n" x="300" y="123">2</text><text class="t" x="300" y="147">Competitive research</text><text class="s" x="300" y="170">How six other products</text><text class="s" x="300" y="188">handle a lockout</text></g>
+            <g transform="rotate(-1 696 152)"><rect x="596" y="97" width="200" height="110" rx="4" fill="#ffecbd"/><text class="n" x="612" y="123">3</text><text class="t" x="612" y="147">Ideation</text><text class="s" x="612" y="170">Fifty ideas against</text><text class="s" x="612" y="188">the five questions</text></g>
+            <g transform="rotate(1.5 946 152)"><rect x="846" y="97" width="200" height="110" rx="4" fill="#ffecbd"/><text class="n" x="862" y="123">4</text><text class="t" x="862" y="147">Scoring</text><text class="s" x="862" y="170">Against the limits, the</text><text class="s" x="862" y="188">brief and the aim</text></g>
+            <g transform="rotate(1 144 412)"><rect x="44" y="357" width="200" height="110" rx="4" fill="#ffc7c2"/><text class="n" x="60" y="383">5</text><text class="t" x="60" y="407">Design v1</text><text class="s" x="60" y="430">A status screen with</text><text class="s" x="60" y="448">every step listed</text></g>
+            <g transform="rotate(-1.5 384 412)"><rect x="284" y="357" width="200" height="110" rx="4" fill="#ffc7c2"/><text class="n" x="300" y="383">6</text><text class="t" x="300" y="407">Edge cases</text><text class="s" x="300" y="430">Nobody answers, bad</text><text class="s" x="300" y="448">network, feeling unsafe</text></g>
+            <g transform="rotate(1.2 696 412)"><rect x="596" y="357" width="200" height="110" rx="4" fill="#e4ccff"/><text class="n" x="612" y="383">7</text><text class="t" x="612" y="407">User testing</text><text class="s" x="612" y="430">Peers on a phone,</text><text class="s" x="612" y="448">thinking out loud</text></g>
+            <g transform="rotate(-1 144 672)"><rect x="44" y="617" width="200" height="110" rx="4" fill="#ffc7c2"/><text class="n" x="60" y="643">8</text><text class="t" x="60" y="667">Version 2</text><text class="s" x="60" y="690">One step at a time,</text><text class="s" x="60" y="708">replies on the step</text></g>
+            <g transform="rotate(1.5 384 672)"><rect x="284" y="617" width="200" height="110" rx="4" fill="#ffc7c2"/><text class="n" x="300" y="643">9</text><text class="t" x="300" y="667">Edge cases</text><text class="s" x="300" y="690">Rebuilt for the new</text><text class="s" x="300" y="708">step screens</text></g>
+            <g transform="rotate(-1.2 696 672)"><rect x="596" y="617" width="200" height="110" rx="4" fill="#cdf4d3"/><text class="n" x="612" y="643">10</text><text class="t" x="612" y="667">Prototyping</text><text class="s" x="612" y="690">A working prototype</text><text class="s" x="612" y="708">from the Figma frames</text></g>
+            <g transform="rotate(2 950 412)"><rect x="846" y="367" width="220" height="90" rx="4" fill="#fff4c2"/><text class="q" x="862" y="397">“It feels like a long</text><text class="q" x="862" y="417">onboarding.”</text><text class="s" x="862" y="441">and three more moments</text></g>
+            <g transform="rotate(-2 950 672)"><rect x="846" y="627" width="220" height="90" rx="4" fill="#fff4c2"/><text class="q" x="862" y="657">Plays all four nights</text><text class="s" x="862" y="681">Host answers, nobody answers,</text><text class="s" x="862" y="699">bad network, the host’s phone</text></g>
+          </g>
+        </svg>
+      </figure>
       <div class="boards" data-r="0">
         <a href="img/b-overview.png" target="_blank" rel="noopener">Current app findings</a>
         <a href="img/b-competitive.png" target="_blank" rel="noopener">Competitive research</a>
@@ -563,11 +624,15 @@
         <a href="img/b-v4.png" target="_blank" rel="noopener">Design round 4</a>
       </div>
     </section>
+
   </main>
 
   <footer class="wrap foot">
-    <p>Airbnb late-night arrival · a design exercise, not affiliated with Airbnb</p>
-    <p>Illustrations generated with Figma AI in Airbnb’s 3D object style · App icons belong to their owners</p>
+    <div class="foot-txt">
+      <p>Airbnb late-night arrival · a design exercise, not affiliated with Airbnb</p>
+      <p>Illustrations generated with Figma AI in Airbnb’s 3D object style · App icons belong to their owners</p>
+    </div>
+    <a class="site alt" href="demo/index.html" target="_blank" rel="noopener">Open the working prototype<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
   </footer>
 </div>
 </body>
