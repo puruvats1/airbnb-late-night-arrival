@@ -1038,3 +1038,15 @@ main .wrap{max-width:1120px}
 .pj-st .t{font-size:15px}
 .pj-st .q{font-size:14px;font-weight:600;fill:#222;font-style:italic}
 footer.foot{max-width:1120px}
+
+/* the prototype link under the final design heading */
+.proto-cta{justify-self:start;margin-top:20px}
+@media (min-width:901px){.sec>.proto-cta{grid-column:1;grid-row:2;align-self:start;margin-top:24px}.sec:has(>.proto-cta)>.lead{grid-row:1 / span 2}.sec:has(>.proto-cta)>.h2{align-self:start}}
+
+/* tapping a story phone opens the full prototype */
+.deck.proto{position:relative}
+.proto-open{position:absolute;inset:0;z-index:3;display:flex;align-items:flex-end;justify-content:center;padding-bottom:12%;border-radius:12%/5.5%;text-decoration:none;cursor:pointer}
+.proto-open span{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;background:var(--ink);color:#fff;font-size:var(--t5);font-weight:600;opacity:0;translate:0 8px;transition:opacity .25s,translate .35s var(--out);box-shadow:var(--sh-lg)}
+.proto-open span svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.proto-open:hover span,.proto-open:focus-visible span{opacity:1;translate:0 0}
+@media (hover:none){.proto-open span{opacity:1;translate:0 0}}
