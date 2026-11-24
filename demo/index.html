@@ -67,10 +67,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 <body>
 <div class="chrome">
   <div class="picker" role="group" aria-label="Scenario">
-    <button type="button" data-sc="host">The host answers</button>
-    <button type="button" data-sc="nobody">Nobody answers</button>
-    <button type="button" data-sc="network">Bad network</button>
-    <button type="button" data-sc="hostphone">The host’s phone</button>
+    <button type="button" data-sc="host">Happy path</button>
+    <button type="button" data-sc="nobody">No one picked up</button>
+    <button type="button" data-sc="network">No signal</button>
+    <button type="button" data-sc="safety">Safety</button>
   </div>
   <div class="frame"><div class="dev" id="dev">
     <section class="scr" data-key="trips" data-frame="v5-01">
@@ -3565,8 +3565,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   function toast(t) { const el = $('#toast'); el.textContent = t; el.classList.add('in'); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('in'), 1900); }
   function hint(k) {
     clearTimeout(hintT); $$('.hint').forEach((n) => n.classList.remove('hint'));
-    if (scenario === 'scroll' || !HINT[k]) return;
-    hintT = setTimeout(() => { const h = named(scr(k), HINT[k]); h && h.classList.add('hint'); }, 1800);
+    const target = scenario === 'safety' && k === 'cohost' ? 'Safety pill' : HINT[k];
+    if (scenario === 'scroll' || !target) return;
+    hintT = setTimeout(() => { const h = named(scr(k), target); h && h.classList.add('hint'); }, scenario === 'safety' ? 900 : 1800);
   }
   const anim = (el, cls, delay = 0) => { if (!el) return; el.classList.remove(cls); el.style.animationDelay = delay + 'ms'; void el.getBoundingClientRect(); el.classList.add(cls); };
   const sig = (el) => el ? el.outerHTML.replace(/ (id|data-hot|class|style)="[^"]*"/g, '').replace(/url\(#[^)]+\)/g, '') : '';
@@ -3709,8 +3710,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   function start(sc) {
     scenario = sc; clearAll(); stack = [];
     $$('.picker button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.sc === sc)));
-    const first = { host: 'trips', nobody: 'cohost', network: 'offline', hostphone: 'lock' }[sc] || 'trips';
+    const first = { host: 'trips', nobody: 'cohost', network: 'offline', hostphone: 'lock', safety: 'cohost' }[sc] || 'trips';
     go(first, 'cut');
+    if (sc === 'safety') caption('“I don’t feel safe” sits on every help screen. Tap it.');
   }
 
   // Jump to one named screen with no timers, so the page's scroll can drive the prototype step by step.
@@ -3725,7 +3727,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   }
 
   $$('.picker button').forEach((b) => b.addEventListener('click', () => { location.hash = b.dataset.sc; }));
-  window.addEventListener('hashchange', () => { const h = location.hash.slice(1); if (AUTO[h] || h === 'host' || h === 'hostphone') start(h); });
+  window.addEventListener('hashchange', () => { const h = location.hash.slice(1); if (AUTO[h] || ['host', 'hostphone', 'safety'].includes(h)) start(h); });
   window.addEventListener('message', (e) => {
     if (!e.data) return;
     if (e.data.proto === 'start') start(e.data.sc);
@@ -3740,7 +3742,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   window.addEventListener('resize', fit); fit();
   // A scenario name starts that night; any other screen name opens straight on that screen for a scroll story.
   const h0 = location.hash.slice(1);
-  if (['host', 'nobody', 'network', 'hostphone'].includes(h0)) start(h0);
+  if (['host', 'nobody', 'network', 'hostphone', 'safety'].includes(h0)) start(h0);
   else { start('host'); if (h0 && h0 !== 'trips') { stack = []; scenario = 'scroll'; go(h0, 'cut'); } }
   window.__proto = { start, show, go, get stack() { return stack; }, get cur() { return stack[stack.length - 1]; } };
 })();
